@@ -1,0 +1,196 @@
+* {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.textcolor h3 {
+  color: rgb(255, 255, 255);
+}
+.textcolor p {
+  color: rgb(255, 255, 255);
+}
+
+/* CSS for NavBar */
+.NavBar {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  background-color: white;
+  position: sticky;
+  top: 0%;
+  width: 100%;
+  z-index: 9999;
+}
+.Title img {
+  width: 15%;
+  height: 100%;
+  margin-right: 10%;
+}
+.Title {
+  background-color: opaque;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin-left: 5%;
+  width: 45%;
+  height: 25%;
+}
+.Title :hover {
+  cursor: pointer;
+  text-decoration: none;
+  opacity: 80%;
+}
+
+.menuItems {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin-left: 40%;
+  margin-top: 2%;
+  justify-content: flex-end;
+  background-color: opaque;
+}
+
+.menuItems Link:hover {
+  opacity: 40%;
+  text-decoration: none;
+}
+.menuItems h4:hover {
+  opacity: 40%;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.Menu {
+  width: 45%;
+}
+.Menu:hover {
+  cursor: pointer;
+}
+.menuItems h4 {
+  font-size: 17px;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+.Login {
+  background-color: opaque;
+  margin-right: 0%;
+  width: 20%;
+  justify-content: flex-end;
+}
+
+/* CSS for Welcome Slide */
+.Welcome h1 {
+  font-size: 500%;
+}
+
+/* Product Slide CSS */
+
+.ProductSlide {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  margin-bottom: 2%;
+}
+.product {
+  width: 16%;
+  margin-left: 2%;
+  margin-right: 2%;
+  /* position: relative; */
+}
+.product :hover {
+  cursor: pointer;
+}
+/* .PHover :hover {
+  position: sticky;
+  bottom: 2000rem;
+
+} */
+
+/* About Css */
+.aboutMargin {
+  margin-top: 7%;
+  margin-right: 2%;
+  margin-left: 12%;
+}
+
+/* Contact US */
+.Border {
+  border: none;
+  border-bottom: 2px solid rgb(54, 129, 163);
+  outline: none;
+}
+.Contact {
+  margin-left: 48%;
+}
+.Fields {
+  margin-left: 36%;
+}
+
+.fieldWidth {
+  width: 47%;
+  margin: 1%;
+}
+
+/* Map */
+.Map {
+  overflow: hidden;
+  border: 3px solid rgb(54, 129, 163);
+  width: 75%;
+  margin-left: 12%;
+  margin-right: 11%;
+}
+
+.Reach {
+  margin-left: 12%;
+}
+
+.social {
+  width: 2%;
+  height: 100%;
+}
+.social:hover {
+  cursor: pointer;
+}
+
+/* Footer */
+
+.Footer {
+  position: sticky;
+  bottom: 0%;
+  top: 100%;
+  width: 100%;
+  z-index: 9999;
+}
+
+/* About */
+
+.aboutPage {
+  margin-left: 23%;
+  margin-right: 20%;
+}
+
+
+
+/* Product Page */
+
+.productcenter {
+  margin: auto;
+  width: 55%;
+  border: 3px solid rgb(104, 145, 207);
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.productDescrip{
+  margin-left: 22%;
+  margin-right: 22%;
+  width: 40%;
+
+}
+
+.productColor{
+  width: 60%;
+
+}
