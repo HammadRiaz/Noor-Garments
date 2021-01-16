@@ -16,7 +16,7 @@ class Product extends Component {
     render() { 
         const pr =this.props.products.filter(c => c._id === this.state.id);
         return (
-            <div  className='product m-5' 
+            <div  className='product Shop m-5 ' 
             onClick={()=> this.props.SelectedProduct(pr[0])}>  
             <Link 
             to='/shop/productPage'

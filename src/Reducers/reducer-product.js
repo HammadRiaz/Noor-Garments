@@ -11,10 +11,9 @@ import taat from "../components/Images/Taat.png";
 import Mask from "../components/Images/Mask.jpg";
 import labCoat from "../components/Images/LabCoat.jpg";
 
-const ProductReducer=()=>{
+const ProductReducer = () => {
     return(
     [
-
         {_id:1, Name:'Apron',
                 Price:100, 
                 Image:Aprain, 

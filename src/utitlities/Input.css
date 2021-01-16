@@ -1,0 +1,21 @@
+
+.text-field-custom{
+  width: 100%;
+  font: inherit;
+  border: none;
+  background: white;
+  margin-bottom: 6%;
+}
+
+.text-field-custom:focus{
+  outline: none;
+  background: white;
+}
+
+.text-field-custom--invalid p {
+  color: rgb(47, 101, 252);
+}
+
+.text-field-custom--invalid{
+  background: #ffffffe1;
+}

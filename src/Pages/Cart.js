@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
+import { useState,useContext } from 'react';
+import { AuthContext } from '../utitlities/auth-context';
+const Cart =()=> {
+  const auth = useContext(AuthContext);  
+  console.log(auth.Cart)
+  return(
+        null
+    );
 
-
-class Cart extends Component {
-    state = {  }
-
-    render() {
-        console.log(this.props.products); 
-        return ( null );
-    }
 }
  
 function mapStateToProps(state) {

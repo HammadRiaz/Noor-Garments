@@ -10,7 +10,6 @@ import {Provider} from 'react-redux';
 
 
 const store = createStore(allReducer);
-console.log("DA"+store);
 ReactDOM.render(
     <Provider store={store}>
       <App/>

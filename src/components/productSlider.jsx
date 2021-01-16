@@ -10,7 +10,7 @@ class Slider extends Component {
   }
     render() { 
         return (
-        <div> 
+        <div className='Slider'> 
             <Carousel>
           <Carousel.Item>
             <div className='ProductSlide'>

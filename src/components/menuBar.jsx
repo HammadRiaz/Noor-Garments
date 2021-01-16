@@ -6,18 +6,19 @@ class Menu extends Component {
     render() { 
         return ( 
             <div className='menuItems text-primary'>
-                <Link to='/' className='ml-0 mt-1 text-decoration-none '>
-                Home  
-                </Link>
-                <Link to='/shop' className='ml-3 mt-1 text-decoration-none'>
-                Shop  
-                </Link>
-                <Link to='/about' className='ml-3 mt-1 text-decoration-none'>
-                About
-                </Link>
-                <Link to='/shop/productPage/Cart' className='ml-3 mr-3 mt-1 text-decoration-none'>
-                Cart
-                </Link>
+                
+                    <Link to='/' className='ml-0 mt-1 text-decoration-none '>
+                    Home  
+                    </Link>
+                    <Link to='/shop' className='ml-3 mt-1 text-decoration-none'>
+                    Shop  
+                    </Link>
+                    <Link to='/about' className='ml-3 mt-1 text-decoration-none'>
+                    About
+                    </Link>
+                    <Link to='/shop/productPage/Cart' className='ml-3 mr-3 mt-1 text-decoration-none'>
+                    Cart
+                    </Link>
                 <Dropdown>
                 <Dropdown.Toggle as='h4' className='text-primary mt-1 w-25 ' id="dropdown-basic">
                     More

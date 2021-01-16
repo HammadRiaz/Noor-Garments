@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {VscCallIncoming } from "react-icons/vsc";
 
 class ContactUs extends Component {
     state = {  }
@@ -9,7 +10,7 @@ class ContactUs extends Component {
                 <div className='d-inline-flex w-25 flex-wrap'>
                 <h1 className='text-primary Contact'>CONTACT US</h1>
                 <h6 className=' Contact'>Email:  noorgarments@gmail.com</h6>
-                <h6 className=' Contact'>Phone:  042-7771999</h6>
+                <h6 className=' Contact'>Phone:  042-7771999 <VscCallIncoming/></h6>
                 <h6 className=' Contact'>Address:Gajjumata Sua, Ferozepur road Kahna Lahore</h6>
                 </div>
 

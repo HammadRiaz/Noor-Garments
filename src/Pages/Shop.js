@@ -11,12 +11,12 @@ class Shop extends Component {
      
     render() { 
         return ( 
-            <div>
+            <div >
             <h1 className='text-center text-primary mt-4'>Shop</h1>
             <hr></hr>
             <h3 className='text-center mt-4'> Products available are below</h3>
             <div className='ProductSlide flex-wrap m-5'>
-                <PSlide products={this.props.products}/>
+                <PSlide  products={this.props.products}/>
             </div>
             <hr></hr>    
             <CopyRights/>

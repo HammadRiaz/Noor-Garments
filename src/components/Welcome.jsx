@@ -32,7 +32,7 @@ class Welcome extends Component {
       alt="Third slide"
     />
 
-    <Carousel.Caption className='textcolor'>
+    <Carousel.Caption className='textcolor z1'>
       <h3 className='text-secondary'>Customer Satisfaction</h3>
       <p className='text-secondary text-dark'>Satisfied customer is the best source of advertisement</p>
     </Carousel.Caption>
