@@ -11,6 +11,8 @@ import {connect} from 'react-redux';
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import { AuthContext } from '../utitlities/auth-context';
 import '../css/SideBar.css';
+import {Animated} from "react-animated-css";
+
 const NavBarL = props=> {
     const [click, setClick] = useState(false);
     
@@ -25,30 +27,32 @@ const NavBarL = props=> {
 
         return ( 
            <nav className='navbar mb-4 sticky-top shadow-lg'> 
-                
+                <Animated animationIn="bounceInLeft" animationOut="bounceInRight" isVisible={true}>
                     <Link to='/' className='navbar-logo text-decoration-none' onClick={closeMobileMenu}> 
                         <img className='mr-3' src={logo} alt="" ></img>  
                         NOOR GARMENTS
                     </Link>
-               
+                </Animated>
                 <div className='menu-icon' onClick={showSideBar}>
                 <i className={click ? 'fas fa-times ' : 'fas fa-bars'}/>
                 </div>
-               
+                
                 <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                     {props.sideBarData.map((item, index)=>{
                         return(
+                            <Animated animationIn="bounceInRight" animationOut="bounceInLeft" isVisible={true}>
                             <li key={index} className={item.cName}>
                                 <Link to={item.path} className='nav-links text-decoration-none' onClick={closeMobileMenu}>
                                     {item.icon}
                                      <span> {item.title}</span>
                                 </Link>
                             </li>
+                            </Animated>
                             
                         )
                     })}
                     
-                    
+                    <Animated animationIn="bounceInRight" animationOut="bounceInLeft" isVisible={true}>
                     <li >
                         <Link to='/'
                          onClick={closeMobileMenu}>
@@ -56,11 +60,14 @@ const NavBarL = props=> {
                         </Link>
                         <h6 className='text-primary mr-2 ml-2'>{auth.userName}</h6>
                     </li> 
+                    </Animated>
+                    <Animated animationIn="bounceInRight" animationOut="bounceInLeft" isVisible={true}>
                     {auth.isLoggedIn && (
                         <li>
                         <button className='btn text-primary mt-4' onClick={auth.logout}>LOGOUT</button>
                         </li>
                      )}
+                    </Animated>
                 </ul>
                 
             </nav>

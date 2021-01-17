@@ -7,9 +7,11 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { createStore } from 'redux'
 import allReducer from './Reducers/Reducer'
 import {Provider} from 'react-redux';
+import Cookies from 'js-cookie';
 
 
 const store = createStore(allReducer);
+
 ReactDOM.render(
     <Provider store={store}>
       <App/>

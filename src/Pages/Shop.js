@@ -4,6 +4,8 @@ import CopyRights from '../components/Copyrights';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
+import {Animated} from "react-animated-css";
+
 class Shop extends Component {
     state = {  
        
@@ -12,7 +14,9 @@ class Shop extends Component {
     render() { 
         return ( 
             <div >
+            <Animated animationIn="bounceInUp" animationOut="bounceInDown" isVisible={true}>
             <h1 className='text-center text-primary mt-4'>Shop</h1>
+            </Animated>
             <hr></hr>
             <h3 className='text-center mt-4'> Products available are below</h3>
             <div className='ProductSlide flex-wrap m-5'>

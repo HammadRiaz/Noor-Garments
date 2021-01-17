@@ -8,6 +8,8 @@ import * as AiIcons from "react-icons/ai"
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import { HiOutlineShoppingCart } from "react-icons/hi";
+import {Animated} from "react-animated-css";
+
 import '../css/SideBar.css';
 class NavBarA extends Component {
    state = { 
@@ -30,8 +32,10 @@ class NavBarA extends Component {
            <nav className='navbar mb-4 sticky-top shadow-lg'> 
                 
                     <Link to='/' className='navbar-logo text-decoration-none' onClick={this.closeMobileMenu}> 
-                        <img className='mr-3' src={logo} alt="" ></img>  
+                        <Animated animationIn="bounceInLeft" animationOut="bounceInRight" isVisible={true}>
+                        <img className='mr-3 animate__animated animate__fadeInLeft' src={logo} alt="" ></img>  
                         NOOR GARMENTS
+                        </Animated>
                     </Link>
                
                 <div className='menu-icon' onClick={this.showSideBar}>
@@ -41,19 +45,24 @@ class NavBarA extends Component {
                 <ul className={this.state.click ? 'nav-menu active' : 'nav-menu'}>
                     {this.props.sideBarData.map((item, index)=>{
                         return(
+                            <Animated animationIn="bounceInRight" animationOut="bounceInLeft" isVisible={true}>
                             <li key={index} className={item.cName}>
+                                
                                 <Link to={item.path} className='nav-links text-decoration-none' onClick={this.closeMobileMenu}>
                                     {item.icon}
                                      <span> {item.title}</span>
                                 </Link>
+                                
                             </li>
-                            
+                            </Animated>
                         )
                     })}
                     <li>
+                    <Animated animationIn="bounceInRight" animationOut="bounceInLeft" isVisible={true}>
                     <Link to='/log-in' onClick={this.closeMobileMenu}>
                     <button className='btn text-primary mt-4'>Log In</button>
                     </Link>
+                    </Animated>
                     </li>
                 </ul>
                 

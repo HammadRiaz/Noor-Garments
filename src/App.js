@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useContext } from 'react';
 import './App.css';
 import NavBarA from './components/navBarA';
 import NavBarL from './components/navBarL';
@@ -11,31 +11,34 @@ import {BrowserRouter as Router, Switch , Route, Redirect} from 'react-router-do
 import ProductPage from './Pages/ProductPage';
 import Cart from './Pages/Cart';
 import { AuthContext } from './utitlities/auth-context';
-
-
+import Cookies from 'js-cookie';
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userId, setUserId] = useState(false);
   const [userName, setUserName] = useState(false);
   const [cart, setCart] = useState(false);
+  const auth = useContext(AuthContext);
 
-
+  
   const login = useCallback((uid,Name,Cart) => {
       setIsLoggedIn(true);
       setUserId(uid);
       setUserName(Name);
       setCart(Cart); 
-      console.log(Cart);
-      console.log(Name);
-
+      Cookies.set("isLoggedIn","true", { expires: 2 });
     }, []);
   
+    const myCookieForLogin= Cookies.get("isLoggedIn");
+    if(myCookieForLogin){
+      console.log(auth.isLoggedIn);
+    }
+
   const logout = useCallback(() => {
       setIsLoggedIn(false);
       setUserId(null);
       setUserName(null);
       setCart(null);
-
+      Cookies.set("isLoggedIn","false");
     }, []);
    
   let routes;  

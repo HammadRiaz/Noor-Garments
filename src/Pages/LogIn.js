@@ -11,6 +11,8 @@ import {
 import { useForm } from '../utitlities/form-hook';
 import { AuthContext } from '../utitlities/auth-context';
 import './Auth.css';
+import {Animated} from "react-animated-css";
+
 const LogIn = () => {
   const auth = useContext(AuthContext);
   const [isLoginMode, setIsLoginMode] = useState(true);
@@ -135,6 +137,7 @@ const LogIn = () => {
   return (
     <React.Fragment>
     <ErrorModal error={error} onClear={errorHandler} />
+    <Animated animationIn="bounceInUp" animationOut="bounceInDown" isVisible={true}>
     <div className="authentication">
     {isLoading && <LoadingSpinner asOverlay/>}
     {!isLoginMode &&<h2>Sign Up</h2>}
@@ -188,6 +191,7 @@ const LogIn = () => {
        {isLoginMode ? 'SIGNUP' : 'LOGIN'}
       </Button>
     </div>
+    </Animated>
     </React.Fragment>
   );
 };

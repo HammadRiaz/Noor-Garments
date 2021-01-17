@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import AP from "../components/Images/AboutPage.jpg";
 import CopyRights from '../components/Copyrights';
+import {Animated} from "react-animated-css";
+
 class About extends Component {
     state = {  }
     render() { 
         return ( 
             <div>
+                <Animated animationIn="bounceInUp" animationOut="bounceInDown" isVisible={true}>
                 <h1 className='text-center text-primary mt-5'>About Our Store</h1>
-                
+                </Animated>
                 <div className='aboutPage w-100'>
                 <p className='w-50 text-center  m-5'>Noor Garments was founded in 2005 by Riaz Ahmad and Samina Riaz, 
                 With the passage of time the manufacturing scale increased from house-scale to factory-scale.

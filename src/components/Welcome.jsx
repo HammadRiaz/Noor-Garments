@@ -5,10 +5,17 @@ import S2 from "./Images/Slide2.png"
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import {Carousel} from 'react-bootstrap';
+import {Animated} from "react-animated-css";
 
 
 class Welcome extends Component {
-  
+  state={
+    visible: false
+  }
+  setVisible=()=>{
+    const visible= true;
+    this.setState({visible});
+  }
   render() {  
     return(
 <div>
@@ -51,10 +58,12 @@ class Welcome extends Component {
   </Carousel.Item>
 </Carousel>
 </div>
-<div className='Welcome'>
+<Animated animationIn="bounceInUp" animationOut="bounceInDown" isVisible={this.state.visible}>
+<div className='Welcome' onClick={this.setVisible}>
         <h1 className='text-center mt-5 text-primary'>WELCOME</h1>
         <h3 className='text-center mt-3'>Products you will LOVE !</h3>
 </div>
+</Animated>
 </div>
     );
     
