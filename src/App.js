@@ -4,6 +4,7 @@ import NavBarA from './components/navBarA';
 import NavBarL from './components/navBarL';
 import Shop from './Pages/Shop';
 import About from './Pages/About';
+import UCT from './Pages/UCT';
 import Home from './Pages/Home';
 import Login from './Pages/LogIn';
 import './css/Style.css';
@@ -12,6 +13,7 @@ import ProductPage from './Pages/ProductPage';
 import Cart from './Pages/Cart';
 import { AuthContext } from './utitlities/auth-context';
 import Cookies from 'js-cookie';
+
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userId, setUserId] = useState(false);
@@ -53,6 +55,7 @@ const App = () => {
         <Route path="/shop" exact component={Shop}/>
         <Route path="/shop/productPage" exact component={ProductPage}/>
         <Route path="/shop/productPage/Cart" exact component={Cart}/>
+        <Route path="/shop/productPage/cartUpdate" exact component={UCT}/>
         <Redirect to='/'></Redirect>
       </Switch>
       </Router>

@@ -25,8 +25,8 @@ const ProductReducer = () => {
         {_id:2, Name:'Net Hair Cap',
                 Price:10,  
                 Image:Cap,
-                Color:["Red", "White","Black"],
-                clothType:null, 
+                Color:["Red", "White", "Black"],
+                clothType:["Cotton"],
                 companyLogo:false,
                 description:'Wore to prevent the hair to fall into merchandise and to maintain clealiness of the workplace.'},
 
@@ -34,7 +34,7 @@ const ProductReducer = () => {
                 Price:20,
                 Image:chefCap, 
                 Color:["Red", "White","Black"],
-                clothType:null, 
+                clothType:["Cotton"],
                 companyLogo:false,
                 description:'Wore by chefs as a part of uniform and to prevent chefs hair to fall in ht merchandise.'},
 
@@ -42,7 +42,7 @@ const ProductReducer = () => {
                 Price:500, 
                 Image:chefCoat, 
                 Color:["Red", "White","Black"],
-                clothType:null,
+                clothType:["Cotton"],
                 companyLogo:false,
                 description:'Wore by Chefs as a part of Uniform in working places.'},
 
@@ -50,7 +50,7 @@ const ProductReducer = () => {
                 Price:10, 
                 Image:taat,
                 Color:['Brown'],
-                clothType:null,
+                clothType:["Cotton"],
                 companyLogo:null,
                 description:'Used as an insulator to hold items that are very hot and has high temperature.'},
 
@@ -58,7 +58,7 @@ const ProductReducer = () => {
                 Price:10, 
                 Image:Gloves,
                 Color:['white'],
-                clothType:null,
+                clothType:["parachute","Cotton"],
                 companyLogo:null,
                 description:'Used as an insulator to hold items that are very hot and has high temperature.'},
 
@@ -66,7 +66,7 @@ const ProductReducer = () => {
                 Price:13, 
                 Image:Bag, 
                 Color:["Red", "White","Black"],
-                clothType:null,
+                clothType:["parachute","Cotton"],
                 companyLogo:false,
                 description:'Bags to hold items for shopping etc.'},
 
@@ -74,7 +74,7 @@ const ProductReducer = () => {
                 Price:500, 
                 Image:Trouser, 
                 Color:["Blue","Black"],
-                clothType:null,
+                clothType:["parachute","Cotton"],
                 companyLogo:false,
                 description:'Wore by workers as Uniform curriclumn.'},
 
@@ -82,7 +82,7 @@ const ProductReducer = () => {
                 Price:100, 
                 Image:tShirt,
                 Color:["Red", "Gray", "White", "Blue", "Brown", "Black"],
-                clothType:null,
+                clothType:["parachute","Cotton"],
                 companyLogo:false,
                 description:'Wore by workers as Uniform curriclumn.'},
 
@@ -90,7 +90,7 @@ const ProductReducer = () => {
                 Price:20, 
                 Image:beardCover,
                 Color:["Red", "Gray", "White", "Blue", "Brown", "Black"],
-                clothType:null,
+                clothType:["parachute","Cotton"],
                 companyLogo:false,
                 description:'Wore by workers as Uniform curriclumn.'},
 
@@ -98,7 +98,7 @@ const ProductReducer = () => {
                  Price:15, 
                  Image:Mask,
                  Color:["Red", "Gray", "White", "Blue", "Brown", "Black"],
-                 clothType:null,
+                 clothType:["parachute","Cotton"],
                  companyLogo:false,
                  description:'Wore by workers as Uniform curriclumn.'},
 
@@ -106,7 +106,7 @@ const ProductReducer = () => {
                 Price:700, 
                 Image:labCoat,
                 Color:["White"],
-                clothType:null,
+                clothType:["parachute","Cotton"],
                 companyLogo:false,
                 description:'Wore by workers as Uniform curriclumn.'}
     ]

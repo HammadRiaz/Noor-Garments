@@ -216,7 +216,7 @@
 .menu-icon {
   display: none;
 }
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1253px) {
   .Shop{
     display: flex;
     flex-wrap: wrap;
@@ -224,7 +224,7 @@
     height: max-content;
   }
 }
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 1253px) {
   .NavbarItems {
     position: relative;
   }
@@ -341,3 +341,6 @@
   font-weight: bold;
 }
 /* LOGIN */
+.update{
+  border: #1888ff ;
+}

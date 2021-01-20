@@ -12,9 +12,9 @@ import Input from '../utitlities/Input';
 import Button from '../utitlities/Button';
 
 const ProductPage =(props)=> {
-
+        const [isLoading, setIsLoading]= useState(false);
         const auth = useContext(AuthContext)
-        const {isLoading, error, sendRequest, clearError} = useHttpClient();
+        const { error, sendRequest, clearError} = useHttpClient();
         const [priceIncrease, setIncrease] = useState(false);
         const [color, setColor] = useState();
         const [clothType, setClothType] = useState();
@@ -22,18 +22,19 @@ const ProductPage =(props)=> {
 
         const AddedToCart = async event =>{
             event.preventDefault();
-           
-            if(color=== undefined || clothType=== undefined){
-
-            }
+            setIsLoading(true);
             
-            console.log(props.product._id);
-            console.log(auth.userId);
-            console.log(props.product.Name);
-            console.log(color.c);
-            console.log(clothType.c);
-            console.log(cL);
-            console.log(document.getElementById('Quantity').value);
+            // if(color=== undefined || clothType.c=== undefined){
+                
+            // }
+            
+            // console.log(props.product._id);
+            // console.log(auth.userId);
+            // console.log(props.product.Name);
+            // console.log(color.c);
+            // console.log(clothType.c);
+            // console.log(cL);
+            // console.log(document.getElementById('Quantity').value);
 
             try{
                 await sendRequest('http://localhost:5000/api/cart/addProduct', 'POST', 
@@ -42,16 +43,17 @@ const ProductPage =(props)=> {
                     ProductID: props.product._id,
                     Creator: auth.userId,
                     Name: props.product.Name,
-                    Color: color.c,
-                    clothType: clothType.c,
+                    Color: color,
+                    clothType: clothType,
                     companyLogo:cL,
                     Quantity:document.getElementById('Quantity').value
                 }
             ),
             {'Content-Type': 'application/json'} 
         );
+        setIsLoading(false);
         }catch(err){
-
+            setIsLoading(false);
         }
         }
 
@@ -66,7 +68,7 @@ const ProductPage =(props)=> {
             <div>
                 <ErrorModal error={error} onClear={ clearError}/>
                 <form className='p-5' onSubmit={AddedToCart}>
-                    {isLoading && <LoadingSpinner asOverlay/>}
+                {isLoading && <LoadingSpinner asOverlay/>}
                     <h5 className='productDescrip'><Link className='text-decoration-none' to='/shop'>Shop</Link>  /{props.product.Name}<br></br></h5>
                     <hr></hr>
                     <div className='productcenter'>
@@ -85,17 +87,23 @@ const ProductPage =(props)=> {
                     </div>
                     <div className='productColor'>
                         <h4>Rs:{props.product.Price}</h4>
+
                         <br></br>
+                        <h6>NOTE: Double Click to select option (For surety purpose)</h6>
+                        <br></br>
+                    
                     <label className='text-primary'>Colors</label>
                     <br></br>
                         {props.product.Color.map(c=>(
                             <div key={Math.random().toString()}>
                             <input
+                            className='btn'
                                 type="radio"
                                 name="color"
                                 id={c}
+                                
                                 onClick={()=>{
-                                    setColor({c});
+                                    setColor(c);
                                 }}
                                 
                                 /> {c}
@@ -109,17 +117,19 @@ const ProductPage =(props)=> {
                         {props.product.clothType === null || props.product.clothType.map(c=>(
                             <div key={Math.random().toString()}>
                             <input
+                            className='btn'
                                 type="radio"
                                 name="cloth"
-                                id={c}
+                                id={Math.random().toString()}
+                                value={c.c}
                                 onClick={()=>{
-                                    setClothType({c});
+                                    setClothType(c);
                                 }}
                                 /> {c}
                             </div>
                         ))}   
                         <br></br>
-                        <input id='Logo' disabled={!priceIncrease} type='checkbox' onClick={()=>{
+                        <input id='Logo' className='btn' disabled={!priceIncrease} type='checkbox' onClick={()=>{
                             setCL(document.getElementById('Logo').checked);
                         }
                         } className='text-primary'/> <label className='text-primary'>Company Logo</label>
@@ -129,7 +139,7 @@ const ProductPage =(props)=> {
                         
                     <label>Quantity</label>
                     <br></br> 
-                    <input type='number' min="1" id='Quantity' name='quantity' onChange={()=>{
+                    <input type='number' className='btn text-primary ' min="1" id='Quantity' name='quantity' onChange={()=>{
                         if(document.getElementById('Quantity').value >= 50){
                         setIncrease(true)}
                         if(document.getElementById('Quantity').value < 50){
